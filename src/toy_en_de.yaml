@@ -1,0 +1,29 @@
+# toy_en_de.yaml
+
+## Where the samples will be written
+save_data: ../data/opennmt/run
+## Where the vocab(s) will be written
+src_vocab: ../data/opennmt/run/vocab.src
+tgt_vocab: ../data/opennmt/run/vocab.tgt
+# Prevent overwriting existing files in the folder
+overwrite: False
+
+# Corpus opts:
+data:
+    corpus_1:
+        path_src: ../data/clean/Europarl_train_100k.tok.true.clean.en
+        path_tgt: ../data/clean/Europarl_train_100k.tok.true.clean.fr
+    valid:
+        path_src: ../data/clean/Europarl_dev_3750.tok.true.en
+        path_tgt: ../data/clean/Europarl_dev_3750.tok.true.fr
+
+
+# Train on a single GPU
+world_size: 1
+# gpu_ranks: [0]
+
+# Where to save the checkpoints
+save_model: opennmt/run/model
+save_checkpoint_steps: 500
+train_steps: 1000
+valid_steps: 500
