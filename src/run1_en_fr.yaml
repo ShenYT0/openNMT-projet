@@ -8,17 +8,16 @@ overwrite: False
 
 # Corpus opts:
 data:
-    corpus_1:
-        path_src: ../data/clean/Europarl/lemma/Europarl_train_100k.tok.true.clean.lemma.en
-        path_tgt: ../data/clean/Europarl/lemma/Europarl_train_100k.tok.true.clean.lemma.fr
-    valid:
-        path_src: ../data/raw/Europarl/Europarl_dev_3750.en
-        path_tgt: ../data/raw/Europarl/Europarl_dev_3750.fr
+  corpus_1:
+    path_src: ../data/clean/Europarl/Europarl_train_100k.tok.true.clean.en
+    path_tgt: ../data/clean/Europarl/Europarl_train_100k.tok.true.clean.fr
+  valid:
+    path_src: ../data/raw/Europarl/Europarl_dev_3750.en
+    path_tgt: ../data/raw/Europarl/Europarl_dev_3750.fr
 
 # Train on a single GPU
 world_size: 1
-gpu_ranks: 
-- 0
+gpu_ranks: [0]
 
 # Where to save the checkpoints
 save_model: ../data/model/run1
@@ -26,29 +25,34 @@ save_checkpoint_steps: 500
 train_steps: 1000
 valid_steps: 500
 
+# # Model parameters
+# model_dtype: fp32  # Use fp32 to avoid potential issues with mixed precision
 
-decoder_type: transformer
-encoder_type: transformer
-word_vec_size: 512
-hidden_size: 512
-layers: 6
-transformer_ff: 2048
-heads: 8
+# decoder_type: transformer
+# encoder_type: transformer
+# word_vec_size: 512
+# hidden_size: 512
+# layers: 6
+# transformer_ff: 2048
+# heads: 8
 
-accum_count: 8
-optim: adam
-adam_beta1: 0.9
-adam_beta2: 0.998
-decay_method: noam
-learning_rate: 2.0
-max_grad_norm: 0.0
+# # Optimization parameters
+# accum_count: [8]  # Use list format for accum_count
+# optim: 'adam'
+# adam_beta1: 0.9
+# adam_beta2: 0.998
+# decay_method: 'noam'
+# learning_rate: 2.0
+# max_grad_norm: 0.0
 
-batch_size: 4096
-batch_type: tokens
-normalization: tokens
-dropout: 0.1
-label_smoothing: 0.1
+# # Training parameters
+# batch_size: 4096
+# batch_type: 'tokens'
+# normalization: 'tokens'
+# dropout: 0.1
+# label_smoothing: 0.1
 
-param_init: 0.0
-param_init_glorot: 'true'
-position_encoding: 'true'
+# # Initialization parameters
+# param_init: 0.0
+# param_init_glorot: true
+# position_encoding: true
