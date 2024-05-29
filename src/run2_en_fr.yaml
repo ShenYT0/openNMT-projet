@@ -8,9 +8,6 @@ overwrite: False
 
 # Corpus opts:
 data:
-    # corpus_1:
-    #     path_src: ../data/clean/Merged/lemma/Europarl_train_110k.tok.true.clean.lemma.en
-    #     path_tgt: ../data/clean/Merged/lemma/Europarl_train_110k.tok.true.clean.lemma.fr
     corpus_1:
         path_src: ../data/clean/Europarl/lemma/Europarl_train_100k.tok.true.clean.lemma.en
         path_tgt: ../data/clean/Europarl/lemma/Europarl_train_100k.tok.true.clean.lemma.fr
