@@ -1,0 +1,32 @@
+## Where the samples will be written
+save_data: ../data/run2
+## Where the vocab(s) will be written
+src_vocab: ../data/run2/vocab.src
+tgt_vocab: ../data/run2/vocab.tgt
+# Prevent overwriting existing files in the folder
+overwrite: False
+
+# Corpus opts:
+data:
+    # corpus_1:
+    #     path_src: ../data/clean/Merged/lemma/Europarl_train_110k.tok.true.clean.lemma.en
+    #     path_tgt: ../data/clean/Merged/lemma/Europarl_train_110k.tok.true.clean.lemma.fr
+    corpus_1:
+        path_src: ../data/clean/Europarl/lemma/Europarl_train_100k.tok.true.clean.lemma.en
+        path_tgt: ../data/clean/Europarl/lemma/Europarl_train_100k.tok.true.clean.lemma.fr
+    corpus_2:
+        path_src: ../data/clean/Emea/lemma/Emea_train_10k.tok.true.clean.lemma.en
+        path_tgt: ../data/clean/Emea/lemma/Emea_train_10k.tok.true.clean.lemma.fr
+    valid:
+        path_src: ../data/raw/Europarl/Europarl_dev_3750.en
+        path_tgt: ../data/raw/Europarl/Europarl_dev_3750.fr
+
+# Train on a single GPU
+world_size: 1
+gpu_ranks: [0]
+
+# Where to save the checkpoints
+save_model: ../data/model/run2
+save_checkpoint_steps: 500
+train_steps: 1000
+valid_steps: 500
