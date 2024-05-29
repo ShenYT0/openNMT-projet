@@ -16,10 +16,9 @@ data:
         path_tgt: ../data/raw/Europarl/Europarl_dev_3750.fr
 
 # Train on a single GPU
-world_size: 2
+world_size: 1
 gpu_ranks: 
 - 0
-- 1
 
 # Where to save the checkpoints
 save_model: ../data/model/run1
