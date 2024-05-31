@@ -12,11 +12,11 @@ Xinlei Chen [chenxinlei1](https://github.com/chenxinlei1)
 
 test_example.ipynb & test_example.yaml : test opennmt using example data : Europarl10k
 
-split_corpus.ipynb :  cut corpus data to train, dev and test.
+split_corpus.ipynb :  split corpus data to train, dev and test.
 
 preprocess.ipynb & mose.sh : pre-processed the data using mosedecoder, the shell version is for windows user who can't use perl in jupyter.
 
-lemmatiser.py & lemmatisation.ipynb & lemma.ipynb : lemmatization , lemma.ipynb is the final version
+lemma.ipynb : lemmatize words using different lemmatizers (WordNetLemmatizer, FrenchLefffLemmatizer, and spaCy)
 
 compare_Spacy.ipynb : compare with nltk and spaCy to find the better lemmatizer
 
